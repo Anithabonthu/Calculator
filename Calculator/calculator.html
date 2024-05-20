@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalCulator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+   
+    <div class="calculator">
+        <h2 style="color: red;" align="center">CALCULATOR</h2><br><hr>
+        <input type="text" id="display" placeholder="0">
+        <div>
+            <button onclick="addToDisplay('1')">1</button>
+            <button  onclick="addToDisplay('2')">2</button>
+            <button  onclick="addToDisplay('3')">3</button>
+            <button onclick="addToDisplay('+')" class="operator">+</button>
+        </div>
+        <div>
+                <button  onclick="addToDisplay('4')">4</button>
+                <button  onclick="addToDisplay('5')">5</button>
+                <button  onclick="addToDisplay('6')">6</button>
+                <button onclick="addToDisplay('-')" class="operator">-</button>
+        </div>
+        <div>
+                <button  onclick="addToDisplay('7')">7</button>
+                <button onclick="addToDisplay('8')">8</button>
+                <button onclick="addToDisplay('9')">9</button>
+                <button onclick="addToDisplay('*')" class="operator">*</button>
+        </div>
+        <div>
+                <button onclick="addToDisplay('/')" class="operator">/</button>
+                <button onclick="addToDisplay('0')">0</button>
+                <button onclick="clearDisplay()" class="operator">C</button>
+                <button  onclick="calculate()" class="equal">=</button>
+        </div>
+    </div>
+    <script>
+        display=document.getElementById('display');
+        function addToDisplay(value)
+        {
+        display.value+=value;
+        }
+        function clearDisplay()
+        {
+        display.value='';
+        }
+        function calculate()
+        {
+        try{
+        display.value=eval(display.value);
+        }
+        catch(error)
+        {
+        display.value='Error'
+        }}
+    </script>
+    </body>
